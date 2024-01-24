@@ -1,0 +1,47 @@
+.form-layout{
+    border-radius: 15px;
+    width: 500px;
+}
+
+h1{
+    color: rgba(255, 255, 255, 0.865);
+}
+
+.material-icons.md-light { color: rgba(255, 255, 255, 0.865); border-color: black; }
+.material-icons.md-green { color: rgb(5, 188, 5); border-color: black;}
+.material-icons.md-red { color: rgb(241, 104, 104); float: right;}
+.material-icons.md-24 { font-size: 24px; }
+
+.icon{
+    float: bottom;
+}
+
+.text{
+    font-size: 20px;
+    padding-left: 20px;
+    float: top;
+}
+
+.my-link:hover {
+    color: rgb(186, 100, 60);
+}
+
+.my-link{
+    color: black;
+}
+
+.btn2 {
+    background-color: rgb(250, 217, 250);
+    border: none;
+    color: none;
+    cursor: pointer;
+    float: right;
+}
+
+.btn1 {
+    background-color: rgb(250, 217, 250);
+    border: none;
+    color: none;
+    cursor: pointer;
+    float: left;
+}

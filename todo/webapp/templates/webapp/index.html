@@ -1,0 +1,15 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+    <div class="text-center">
+
+        <h2>ToDo List</h2>
+        <h5>Organize your day!</h5>
+
+        <hr>
+
+        <a href="{% url 'webapp:register' %}" type="button" class="btn btn-primary">Get Started</a>
+    
+    </div>
+{% endblock %}
+

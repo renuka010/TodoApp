@@ -1,0 +1,27 @@
+{% extends "webapp/base.html" %}
+
+{% block content %}
+
+    <head>
+        
+    </head>
+
+    <body>
+        <div class="container shadow-md p-5 form-layout" style="background-color: rgb(250, 217, 250);">
+
+        <h1 style="text-align: center; font-family:'Brush Script MT', cursive; color: rgb(129, 56, 197);">My Notes</h1>
+
+        <h3 style="text-align: center; font-family:'Brush Script MT', cursive; color: rgb(129, 56, 197);">Edit Note</h3>
+
+        <hr style="border-color: white; border-width: 5px; width:100%">
+
+        <form class="form-inline" method="POST" href="{% url 'webapp:edit' note.id %}">
+            {% csrf_token %}
+            <div class="form-group mx-sm-3 mb-2">
+                <input class="form-control" type="text" name="description" autocomplete="off" value="{{note.description}}">
+            </div>
+        </form>
+        
+        </div>
+    </body>
+{% endblock %}

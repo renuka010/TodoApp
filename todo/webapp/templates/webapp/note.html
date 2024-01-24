@@ -1,0 +1,64 @@
+{% extends "webapp/base.html" %}
+
+{% block content %}
+
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container shadow-md p-5 form-layout" style="background-color: rgb(250, 217, 250); ">
+
+        <h1 style="text-align: center; font-family:'Brush Script MT', cursive; color: rgb(129, 56, 197);">My Notes</h1>
+
+        <form class="form-inline" method="post">
+            {% csrf_token %}
+            <div class="form-group mx-sm-3 mb-2">
+                <input class="form-control" placeholder="Add item" type="text" name="description" autocomplete="off">
+            </div>
+        </form>
+
+        <hr style="border-color: white; border-width: 5px; width:100%">
+
+        {% for note in todonotes %}
+            <div>
+                <div class="icon" style="display:inline; ">
+                    <form class="form-inline" style="display:inline;" method="POST" action="{% url 'webapp:complete' note.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn1">
+                            {% if note.completed %}
+                                <i class="material-icons md-green md-24">check_circle</i>
+                            {% else %}
+                                <i class="material-icons md-light md-24">circle</i>    
+                            {% endif %}
+                        </button>
+                    </form>
+                </div>
+
+                <div class="text" style="display:inline; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    
+                    {% if note.completed %}
+                        <a href="{% url 'webapp:edit' note.id %}" class="my-link" style="text-decoration: none;"><strike>{{note.description}}</strike></a>
+                    {% else %}
+                        <a href="{% url 'webapp:edit' note.id %}" class="my-link" style="text-decoration: none;"> {{note.description}} </a>
+                    {% endif %}
+
+                </div>
+
+                <div class="icon" style="display:inline; ">
+                    <form class="form-inline" style="display:inline;" method="POST" action="{% url 'webapp:delete' note.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn2">
+                            <i class="material-icons md-red md-24">close</i>
+                        </button>
+                    </form>
+                </div>
+                
+
+                <br>
+                <br>
+            </div>
+        {% endfor %}
+        </div>
+    </body>
+{% endblock %}
