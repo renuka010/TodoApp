@@ -24,7 +24,7 @@ To get started with the ToDo application, follow the steps below in command line
 2. Run the Docker image: `docker-compose up`
 3. Access the application in your browser at `http://localhost:8000`
 
-## Running without Docker
+### Running without Docker
 To run the ToDo application in your local machine without Docker, follow the steps below:
 
 1. Run the Django development server: `python manage.py runserver`
